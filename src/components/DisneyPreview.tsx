@@ -8,7 +8,7 @@ import type {Character} from '../interfaces/Characters.ts';
 import styled from 'styled-components';
 
 const CharDiv = styled.div`
-    padding: 2%;
+    padding: 5%;
     
     display: flex;
     flex-direction: column;

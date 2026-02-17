@@ -31,6 +31,28 @@ const PageWrapperDiv = styled.div`
     p {
         font-size: calc(5px + 1vw);
     }
+    
+    ul {
+        width: 30%;
+        margin: auto;
+        
+        list-style: none;
+        padding-left: 0;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    footer p:hover,
+    li a:hover {
+        color: white;
+    }
 `;
 
 const AllCharsDiv = styled.div`
@@ -38,8 +60,7 @@ const AllCharsDiv = styled.div`
     margin: auto;
 
     background-color: lightblue;
-
-
+    
     display: grid;
     grid-template-columns: auto auto auto;
 `;
@@ -74,7 +95,12 @@ export default function DisneyListContent() {
                         })}
                     </AllCharsDiv>
                 </main>
-                <footer><p>Page created by ealvare@bu.edu</p></footer>
+                <footer>
+                    <ul>
+                        <li><p>Page created by ealvare@bu.edu</p></li>
+                        <li><a href="https://disneyapi.dev"><p>API</p></a></li>
+                    </ul>
+                </footer>
             </PageWrapperDiv>
         )
 }
