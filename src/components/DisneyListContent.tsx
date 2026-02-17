@@ -13,12 +13,14 @@ const PageWrapperDiv = styled.div`
     
     font-family: fantasy;
     
-    h1 {
+    h1, footer {
         padding: 1%;
         text-align: center;
         background-color: plum;
         border: 2px solid purple;
-        
+    }
+    
+    h1 {
         font-size: calc(10px + 2vw);
     }
     
@@ -62,12 +64,17 @@ export default function DisneyListContent() {
         /* needs to return a single div */
         return(
             <PageWrapperDiv>
-                <h1>Disney Characters :-)</h1>
-                <AllCharsDiv>
-                    {data.map((char) => {
-                        return <DisneyPreview char={char} />;
-                    })}
-                </AllCharsDiv>
+                <header>
+                    <h1>Disney Characters :-)</h1>
+                </header>
+                <main>
+                    <AllCharsDiv>
+                        {data.map((char) => {
+                            return <DisneyPreview char={char} />;
+                        })}
+                    </AllCharsDiv>
+                </main>
+                <footer><p>Page created by ealvare@bu.edu</p></footer>
             </PageWrapperDiv>
         )
 }
