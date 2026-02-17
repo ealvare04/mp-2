@@ -5,10 +5,31 @@ description: Uses the received data to build the UI
 */
 
 import type {Character} from '../interfaces/Characters.ts';
+import styled from 'styled-components';
+
+const CharDiv = styled.div`
+    padding: 2%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    border: 5px solid lightblue;
+
+    background-color: lightcyan;
+    
+
+    img {
+        max-width: 100%;
+    }
+`;
+
 
 export default function DisneyPreview({ char }: { char: Character }) {
     let appearance = "No appearances listed";
 
+    /* choose the first appearance of this character */
     if (char.films.length > 0) {
         appearance = 'Film: ' + char.films[0];
     } else if (char.shortFilms.length > 0) {
@@ -20,10 +41,12 @@ export default function DisneyPreview({ char }: { char: Character }) {
     }
 
     return (
-        <div key={char.id}>
+        <CharDiv key={char.id}>
             <h3>{char.name}</h3>
-            <img src={char.imageUrl} alt={char.name} />
+            <a href={char.url}>
+                <img src={char.imageUrl} alt={char.name} />
+            </a>
             <p>{appearance}</p>
-        </div>
+        </CharDiv>
     )
 }
